@@ -45,10 +45,6 @@ myparser.ctypes                     myparser.getStructuredParsingTree(  myparser
 >>> myparser.getStructuredParsingTree("int main()\n{\n    return 0;\n}")
 '{*<translation_unit>{*<external_declaration>{*<function_definition>{*<declaration_specifiers>{*<type_specifier>{#[int]}}}{*<declarator>{*<direct_declarator>{*<direct_declarator>{#[main]}}{#[(]}{#[)]}}}{*<compound_statement>{#[{]}{*<block_item_list>{*<block_item>{*<statement>{*<jump_statement>{#[return]}{*<expression>{*<assignment_expression>{*<conditional_expression>{*<logical_or_expression>{*<logical_and_expression>{*<inclusive_or_expression>{*<exclusive_or_expression>{*<and_expression>{*<equality_expression>{*<relational_expression>{*<shift_expression>{*<additive_expression>{*<multiplicative_expression>{*<cast_expression>{*<unary_expression>{*<postfix_expression>{*<primary_expression>{*<constant>{#[0]}}}}}}}}}}}}}}}}}}}{#[;]}}}}}{#[}]}}}}}'
 >>> root = myparser.getParsingTree("int main()\n{\n    return 0;\n}")
->>> root.printTree()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: printTree() missing 1 required positional argument: '_depth'
 >>> root.printTree(0)
 [*] <translation_unit>
 	[*] <external_declaration>
