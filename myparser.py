@@ -133,7 +133,7 @@ def getParsingTree(_input):
     while currIdx < len(structedParsingTree):
         if structedParsingTree[currIdx] == '{':
             i = currIdx + 2
-            while structedParsingTree[i] not in ['>', ']']:
+            while structedParsingTree[i] not in ['>', ']'] and structedParsingTree[i-1:i+2] not in ["[>]", "[]]"]:
                 i += 1
             tmpNode = TreeNode(structedParsingTree[currIdx+1], structedParsingTree[currIdx+2:i+1])
             currNode.addChild(tmpNode)
