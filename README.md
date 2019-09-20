@@ -25,13 +25,13 @@ $> make
 $> cd ..
 ```
 
-Now, you can see the `parser.so` dynamic library under this directory.
+Now, you can see the `parser.so` dynamic library under `bin`.
 
-2. Import the python module.
+1. Import the python module.
 
 ```sh
 $> python3
->>> import myparser
+>>> import cparser
 ```
 
 3. Try it out!
