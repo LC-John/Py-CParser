@@ -64,7 +64,14 @@ string TreeNode::structuredTree(string out)
         case Non: out += "*"; break;
         default: break;
     }
-    out += str;
+    if (str[1] == '{' || str[1] == '}')
+    {
+        out += "(";
+        out += str.substr(1, str.length()-2);
+        out += ")";
+    }
+    else
+        out += str.substr(1, str.length()-2);
     for (int i = 0; i < children.size(); i++)
         out = children[i]->structuredTree(out);
     out += "}";
