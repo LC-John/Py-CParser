@@ -20,8 +20,9 @@ Bison == 3.0.4
 1. Generate the `.so` dynamic library.
 
 ```sh
-$> cd PATH/TO/THIS/DIRECTORY
+$> cd PATH/TO/THIS/DIRECTORY/lib
 $> make
+$> cd ..
 ```
 
 Now, you can see the `parser.so` dynamic library under this directory.
