@@ -1123,6 +1123,6 @@ declaration_list
 int yyerror(const char *s)
 {
 	fflush(stdout);
-	fprintf(stderr, "*** %s\n", s);
+	fprintf(stderr, "ERROR> %s\n", s);
 	return -1;
 }
