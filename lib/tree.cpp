@@ -6,12 +6,13 @@
 #include "tree.h"
 using namespace std;
 
-TreeNode::TreeNode(NodeType _type, string _str)
+TreeNode::TreeNode(NodeType _type, string _str, TreeNode* _node)
 {
     type = _type;
     str = _str;
     parent = NULL;
     children = vector<TreeNode*>();
+    next = _node;
 #ifdef TREE_NODE_DEBUG
     printNode(0);
 #endif // TREE_NODE_DEBUG
@@ -22,9 +23,6 @@ TreeNode::~TreeNode()
 #ifdef TREE_NODE_DEBUG
     cout << "del " << str << endl;
 #endif // TREE_NODE_DEBUG
-    for (int i = 0; i < children.size(); i++)
-        if (children[i] != NULL)
-            delete children[i];
 }
 
 int TreeNode::addChild(TreeNode* _child)

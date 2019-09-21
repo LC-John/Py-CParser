@@ -8,6 +8,7 @@ using namespace std;
 extern FILE* yyin;
 extern FILE* yyout;
 TreeNode* root;
+TreeNode* curr;
 
 int main(int argc, char** argv)
 {
@@ -33,6 +34,8 @@ int main(int argc, char** argv)
             }
         }
     }
+    root = new TreeNode(Non, "<translation_unit>", NULL);
+    curr = root;
     yyparse();
     root->printTree(0, yyout);
     return 0;

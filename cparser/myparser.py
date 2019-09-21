@@ -190,10 +190,7 @@ def printParsingTree(_input):
     if not isinstance(_input, str):
         raise(TypeError("Invalid _input: "+str(_input)
             +".\nPlease use valid string type."))
-    try:
-        inp = ctypes.create_string_buffer(str.encode(_input))
-    except Exception:
-        raise(SyntaxError("Invalid syntax.\nPlease check the input source code."))
+    inp = ctypes.create_string_buffer(str.encode(_input))
     _printParsingTree(inp)
     return None
 
@@ -202,10 +199,10 @@ def getParsingTree(_input):
     if not isinstance(_input, str):
         raise(TypeError("Invalid _input: "+str(_input)
             +".\nPlease use valid string type."))
-    try:
-        structedParsingTree = getStructuredParsingTree(_input)
-    except Exception:
-        raise(SyntaxError("Invalid syntax.\nPlease check the input source code."))
+    
+    structedParsingTree = getStructuredParsingTree(_input)
+    if structedParsingTree == "":
+        return None
     root = TreeNode("*", "<pseudo-root>")
     currNode = root
     currIdx = 0

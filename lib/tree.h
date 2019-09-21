@@ -20,8 +20,9 @@ public:
     string str;
     TreeNode* parent;
     vector<TreeNode*> children;
+    TreeNode* next;
 
-    TreeNode(NodeType _type, string _str);
+    TreeNode(NodeType _type, string _str, TreeNode* _node);
     ~TreeNode();
     int addChild(TreeNode* _child);
     void printTree(int depth, FILE* outfile);
