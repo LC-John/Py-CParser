@@ -1,5 +1,7 @@
 # Py-CParser
 
+[![Build Status](https://travis-ci.org/LC-John/Py-CParser.svg?branch=master)](https://travis-ci.org/LC-John/Py-CParser)
+
 This is a file-level C++11 parser implemented with Flex and Bison, and wrapped as a Python3 module.
 
 The parser takes a single c++ code file as input, discards the macros such as "#include" and "#define", and generates the parsing tree (NOT AST!). The source code can be restored by traversing the leaf nodes of the parsing tree.
