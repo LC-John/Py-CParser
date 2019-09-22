@@ -36,7 +36,9 @@ int main(int argc, char** argv)
     }
     root = new TreeNode(Non, "<translation_unit>", NULL);
     curr = root;
-    yyparse();
-    root->printTree(0, yyout);
+    if (yyparse() == 0)
+        root->printTree(0, yyout);
+    else
+        fprintf(stderr, "Syntax ERROR!\n");
     return 0;
 }
